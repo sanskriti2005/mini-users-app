@@ -1,6 +1,16 @@
 {
-    "users": [
-      { "id": "1", "name": "Saiki K", "anime": "the-disastrous-life-of-saiki-k" },
-      { "id": "2", "name": "MaoMao", "anime": "the-apothecary-diaries"}
-    ]
-  }
+  "users": [
+    {
+      "id": "37fa",
+      "name": "Gaoshun"
+    },
+    {
+      "id": "da45",
+      "name": "Light Yagami"
+    },
+    {
+      "id": "2d6a",
+      "name": "MaoMao"
+    }
+  ]
+}
