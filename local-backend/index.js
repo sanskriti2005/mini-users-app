@@ -8,7 +8,7 @@ let dataToBeDsiplayed = [];
 async function getData() {
     // fetching data from the endpoint
     try {
-        let res = await fetch("http://localhost:3000/users");
+        let res = await fetch("https://metal-golden-tin.glitch.me/users");
         let data = await res.json();
         // displaying the data recieved from the endpoint
         displayData(userDataContainer, data);
@@ -42,16 +42,16 @@ function displayData(container, arr) {
 addBtn.addEventListener("click", postData);
 async function postData() {
     try {
-        let res = await fetch("http://localhost:3000/users", {
+        let res = await fetch("https://metal-golden-tin.glitch.me/users", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
             },
             body: JSON.stringify({ name: `${usernameField.value}` })
         })
-        console.log(res);
+        alert("User Succesfully Added!");
     } catch (err) {
-        console.log(err);
+        alert("User Could Not Be Added");
     }
 }
 
@@ -60,7 +60,7 @@ async function postData() {
 async function removeUser(event) {
     let userEle = event.target.dataset.id;
     try {
-        let res = await fetch(`http://localhost:3000/users/${userEle}`, {
+        let res = await fetch(`https://metal-golden-tin.glitch.me/users/${userEle}`, {
             method: "DELETE",
         })
         if (res.ok) {
@@ -94,7 +94,7 @@ async function updateUserUI(event) {
     async function patchUserName(event) {
         const updatedVal = inputField.value
         try {
-            let res = await fetch(`http://localhost:3000/users/${buttonEleId}`, {
+            let res = await fetch(`https://metal-golden-tin.glitch.me/users/${buttonEleId}`, {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json"
@@ -103,6 +103,8 @@ async function updateUserUI(event) {
             })
             if(res.ok){
                 alert(`User Updated Succesfully!`);
+            } else{
+                alert("Could not update user :/");
             }
         } catch(err){
             console.log(err)
